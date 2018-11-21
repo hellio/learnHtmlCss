@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS样式规则</title>
+	<meta charset="utf-8">
+	<!--
+		使用css样式规则有三种方法：
+			内联样式：
+				将样式规则嵌入到标签的属性里面
+			嵌入样式：
+				将样式规则嵌入到页面的head里面，在style标签里面编写
+			外部样式：
+				将样式规则编写到一个.css文件里面，通过在页面的head里面用link标签引入
+	-->
+	<!--这是嵌入样式-->
+	<!--
+		常见的css样式选择器：
+			有标签选择器：
+				p{}
+			类选择器：
+				.class{}
+			id选择器:
+				#id{}
+			伪类选择器:
+				:before{}
+			复合选择器（交集选择器）：
+				span.class{}
+			分组选择器（并集选择器）：
+				#id, p, .class{}
+	-->
+	<!--这是一个外部样式表-->
+	<!--<link rel="stylesheet" type="text/css" href="style.css"/>-->
+	<style type="text/css">
+		/*分组选择器*/
+		p, #box, .app{
+			font-size:30px;
+		}
+		/*标签选择器*/
+		p{
+			color:red;
+		}
+		/*id选择器*/
+		#box{
+			background-color: blue;
+		}
+		/*类选择器*/
+		.app{
+			background-color: red;
+		}
+		/*复合选择器(交集选择器)*/
+		span.app{
+			color:green;
+		}
+		/*伪类选择器*/
+		a:link{
+			color:blue;
+		}
+		a:visited{
+			color:red;
+		}
+		a:hover{
+			color:green;
+		}
+		a:active{
+			color:yellow;
+		}
+		/*输入框获得聚焦的伪类选择器*/
+		input:focus{
+			background-color:yellow;
+		}
+	</style>
+</head>
+<body>
+	<p>这是一个用css样式规则的段落,使用了标签选择器</p>
+
+	<div id="box">这是一个用id选择器修饰的元素</div>
+
+	<span class="app">
+		这是一个用类选择器修饰的元素
+	</span>
+
+	<span class="app">
+		这是一个复合选择器修饰的元素
+	</span>
+	<br/>
+	<a href="http://www.3600.com">这是一个使用了伪类选择器修饰的a标签</a>
+
+	<input type="text" value="聚焦改变颜色">
+</body>
+</html>
