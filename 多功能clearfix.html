@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>解决父子元素垂直外边距重叠和高度塌陷</title>
+	<style type="text/css">
+		.box1{
+			width:200px;
+			height:200px;
+			background-color:yellow;
+		}
+		.box2{
+			width:100px;
+			height:100px;
+			background-color: blue;
+			float:left;
+			margin-top: 100px;
+		}
+		.clearfix:after,.clearfix:before{
+			content:"";
+			display:table;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1 clearfix">
+		<div class="box2"></div>
+	</div>
+</body>
+</html>
